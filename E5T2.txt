@@ -1,0 +1,23 @@
+# Identify tools that will allow you to do the following:
+
+## Scan infrastructure as code templates
+- regula  is a tool that evaluates infrastructure as code files for potential AWS, Azure, Google Cloud, and Kubernetes security and compliance violations prior to deployment.
+- jforg xray can also be used
+
+### Example vulnerability
+S3 bucket server side encryption should be enabled [High]
+S3 buckets should have all `block public access` options enabled [High]
+S3 bucket policies should only allow requests that use HTTPS [Medium]
+
+##Scan AMI’s or containers for OS vulnerabilities
+- jforg xray
+
+### Example vulnerability
+Apache Commons IO FileNameUtils.normalize Path Traversal Remote File Disclosure Weakness
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+AWS Config
+
+### Example vulnerability
+Checks if Amazon Virtual Private Cloud (Amazon VPC) subnets are assigned a public IP address. This rule is NON_COMPLIANT if Amazon VPC has subnets that are assigned a public IP address.
+securityhub-subnet-auto-assign-public-ip-disabled-a376e0a7

@@ -1,0 +1,10 @@
+Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+
+Bonus - provide recommendations on how to remediate the vulnerabilities.
+1. EC2 Security groups are too permissive - 
+	Disable 0.0.0.0/0 
+	WebAppSG should only allow traffic from UDARR-Application on port 5000
+	UDARR-Application should allow only http traffic on port 80
+2. Block Telnet and FTP on all EC2s
+3. Block publick access to varoious services - Oracle, Mongodb, ...
+

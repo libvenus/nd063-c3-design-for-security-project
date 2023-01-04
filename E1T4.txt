@@ -1,0 +1,12 @@
+Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
+
+# Poor practice 1
+How is the attack able to infiltrate in the Web Service Instance. That means that the Security group is too permissive . We need to ensure that only traffic meant to be coming to the Web Service Instance makes its way. The Web Service Instance should enable only traffic from the load balancer on a specific port and protocol
+
+# Poor practice 2
+No encryption of S3 buckets causing receipes to be ready from anywhere and by anyone
+
+
+Other poor practices:
+1. How come the attacker got the API credentials? It looks like they were hard coded somewhere and the attacker got access to them. Insted we should use roles and better still use immutability so that we don't have to login
+2. Even if the attacker got access how come he was able to access the secret recipies that means there is access level authorization on the bucket from the Webservice instance - i.e. anyone can access both the secret and public receipies. 

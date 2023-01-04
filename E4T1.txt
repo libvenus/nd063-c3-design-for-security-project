@@ -1,0 +1,10 @@
+
+
+# Identify 2-3 changes that can be made to our environment to prevent an ssh brute force attack from the internet.
+How was the hacker able to infiltrate into the system:
+1. Block SSH/SCP from any public ip to the bastin host and application instance . People who need access to bastin host should use systems manager. Even better will be to make immutable deployment 
+2. The intended traffic for the web service instance is http on port 5000 so we will allow only that using SGs
+3. Use roles instead of API keys so that the blast radius is limited along with the time (token expiration)
+
+# Neither instance should have had access to the secret recipes bucket, in the even that instance API credentials were compromised how could we have prevented access to sensitive data.
+The instance role is too permissive - it allows any operation on any resource we have to apply the principal of least privileges and allow only list and get on free receipe bucket 

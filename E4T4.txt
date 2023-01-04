@@ -1,0 +1,16 @@
+
+# What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
+1. WAF 
+2. Role with token expiration of 1 hour
+3. Add CloudFront in front of the load balancer and ensure to use the AWS Systems Manager if you need to access EC2 instances. Also disable external access to the EC2 instances
+
+# Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+Using VPC private endpoints alone would not prevent the unauthorized access to the secrets bucket if the IAM permissions are still insecure.
+
+
+# Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+No
+
+# What would happen if the original cloud formation templates are applied to this environment.
+The hardening that we did will be lost along with all the remediation steps
+
